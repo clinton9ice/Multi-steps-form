@@ -1,11 +1,18 @@
 <template>
   <fieldset>
-    <label
+    <label v-if="label"
       :for="name"
       :class="labelClass"
       class="text-primary-marine-blue text-sm"
       >{{ label }}</label
     >
+    <ErrorMessage
+      :name="name"
+      as="div"
+      class="mb-1 text-red-500 text-xs capitalize float-right"
+      v-if="label"
+    />
+
     <Field
       :name="name"
       :type="type"
@@ -15,12 +22,7 @@
       :placeholder="placeholder"
       v-model.lazy="text"
      />
-    <!-- Render the error message as a div element -->
-    <ErrorMessage
-      :name="name"
-      as="div"
-      class="mt-3 text-red-500 text-xs capitalize"
-    />
+    
   </fieldset>
 </template>
 
@@ -30,8 +32,8 @@ import { watch, ref } from "vue";
 
 defineProps<{
   name: string;
-  type: "text" | "number" | "email" | "tel";
-  label: string;
+  type: "text" | "number" | "email" | "tel" | "checkbox";
+  label?: string ;
   fieldClass?: string | object[] | string[];
   labelClass?: string | object[] | string[];
   placeholder?: string;

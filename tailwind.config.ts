@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: "class",
-    content: ["./index.html","./src/**/*.{vue,ts,html,js}"],
+    content: ["./src/**/*.{vue,ts,html,js}"],
     theme: {
         fontFamily:{
             ubuntu: ['ubuntu',"Verdana", "Geneva", "Tahoma", "sans-serif"],
