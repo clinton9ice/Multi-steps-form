@@ -151,7 +151,7 @@ const traceStep = (s: string) => {
 const togglePlan = () => {
   formData.plan.type = formData.plan.type === "monthly" ? "yearly" : "monthly";
 };
-const selectPlan = (item: FORMDATA["plan"]["option"], price: number) => {
+const selectPlan = (item: any, price: number) => {
   formData.plan.option = item;
   formData.plan.price = price;
 };
